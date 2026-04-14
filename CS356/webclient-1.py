@@ -40,7 +40,7 @@ def main():
         chunk = sock.recv(4096)
         if not chunk:
             break
-        response += chunk
+        response_bytes += chunk
 
     t_end = time.time()
     sock.close()
@@ -68,5 +68,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
