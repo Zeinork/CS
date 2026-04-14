@@ -44,6 +44,8 @@ def main():
     if args.tls:
         # handshake
         context = ssl.create_default_context()
+        context.check_hostname = False
+        context.verify_mode = ssl.CERT_NONE
         t_tls_start = time.time()
         sock = context.wrap_socket(sock, server_hostname=args.host)
         t_tls_end = time.time()
